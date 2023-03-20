@@ -41,7 +41,6 @@ let isroCenter = [];
         }
         });
             
-    
 
 const loadcenters = async () => {
     try {
