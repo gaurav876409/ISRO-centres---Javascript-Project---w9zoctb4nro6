@@ -1,378 +1,251 @@
-/* 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-#centersList{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.wrapper{
-    display: flex;
-    flex-direction: row;
-    background-color: rgb(167, 140, 121);
-    margin-bottom: 10px;
-    width: 135%;
-    height: 80px;
-    justify-content: space-around;
-    align-items: center;
-}
-.center{
-    width: 300px;
-    height: 80px;
-    color: aqua;
-    padding: 12px;
-}
-.center h1{
-    font-weight: 600;
-    font-size: 30px;
-}
-.cent{
-    font-weight: 400;
-    font-size: 20px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-.cent:hover{
-    overflow: visible;
-}
-.city{
-    height: 80px;
-    width: 200px;
-    color: aqua;
-    padding: 12px;
-}
-.city h1{
-    font-weight: 600;
-    font-size: 30px; 
-}
-.cit{
-    font-weight: 400;
-    font-size: 20px;
-}
-.state{
-    height: 80px;
-    width: 200px;
-    color: aqua;
-    padding: 12px;
-}
-.state h1{
-    font-weight: 600;
-    font-size: 30px;
-}
-.st{
-    font-weight: 400;
-    font-size: 20px;
-}
-.container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.searchWrapper{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 70%;
-}
-#searchBar{
-    width: 455px;
-    border: none;
-    padding: 16px;
-    outline: none;
-    cursor: pointer;
-}
-.search{
-    width: 500px;
-    height: 52px;
-    border: 1px solid black;
-    margin-bottom: 10px;
-}
-.fa-search{
-    font-size: 22px;
-    font-weight: 500;
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
 }
-.btn{
-    width: 140px;
-    height: 52px;
-    margin-bottom: 10px;
-    color: aqua;
-    background-color: rgb(167, 140, 121);
-    font-weight: 600;
-    font-size: 30px;
-}
-input::placeholder{
-    font-size: 25px;
-    font-weight: 500;
-    color: black;
-}
-input{
-    font-size: 16px;
-}
-.body{
-    display: flex;
-    flex-direction: column;
-    
-}
-.main-heading{
-    display: grid;
-    justify-items: center;
-}
-.main-heading h2{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(167, 140, 121);
-    height: 50px;
-    width: 70%;
-    color: aqua;
-    font-size: 30px;
-    font-weight: 600;
-    margin-bottom: 10px;
-}
-.heading{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-right: 418px;
-}
-.heading img{
-    width: 80px;
-}
-.heading p{
-    font-size: 30px;
-    font-weight: 500;
-}
-.heading p span{
-    color: rgb(167, 140, 121);
-}
-.head{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.head img{
-    margin-right: 865px;
-    margin-top: 35px;
-    margin-bottom: 25px;
-}
-.head h1{
-    color: rgb(55, 53, 47);
-    font-weight: 700;
-    line-height: 1.2;
-    font-size: 40px;
-    margin-right: 716px;
-}
-.focus{
-    background-color: white;
-} 
-*/
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family:cursive;
-}
-.main-body{
-    width: 100vw;
-    /* height: auto; */
-    background-color: whitesmoke;
+.main-body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 }
-.body{
-    width: 60vw;
-    /* height: auto; */
-    /* background-color: wheat; */
-    display: grid;
-    justify-content: center;
+
+.body {
+    background-color: #fff;
+    width: 800px;
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    padding: 30px;
     position: relative;
+    margin: 0 auto;
 }
-.head img{
-    margin-top: 30px;
-}
-.head h1{
-    color: rgb(55, 53, 47);
-    font-weight: 700;
-    line-height: 1.2;
-    font-size: 40px;
-    margin-top: 20px;
-}
-.heading{
+
+.head {
     display: flex;
+    justify-content: center;
     align-items: center;
-    margin-top: 10px;
+    margin-bottom: 20px;
 }
-.heading img{
+
+.head img {
     margin-right: 10px;
 }
-.heading p{
-    font-size: 30px;
-    font-weight: 500;
+
+.head h1 {
+    font-size: 36px;
+    color: #303030;
 }
-.heading p span{
-    color: rgb(121, 121, 204);
-}
-.main-heading{
-    height: 8vh;
-    width: 50vw;
-    background-color: rgb(121, 121, 204);
+
+.heading {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 30px;
+}
+
+.heading img {
+    margin-right: 10px;
+}
+
+.heading p {
+    font-size: 24px;
+    color: #303030;
+}
+
+.heading p span {
+    font-weight: bold;
+    color: #3088e0;
+}
+
+.main-heading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.main-heading h2 {
+    font-size: 24px;
+    color: #303030;
+}
+
+.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.searchWrapper {
+    display: flex;
+    position: relative;
+    margin: 0 auto;
+    /* justify-content: center;
+    align-items: center; */
     margin-top: 20px;
-    margin-bottom: 10px;
-    border-radius: 2vh;
 }
-.searchWrapper{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    /* background-color: red; */
-    height: 8vh;
-    width: 48vw;
+
+.search {
+    position: relative;
+    width: 300px;
+    margin-right: 10px;
 }
-#searchBar{
+
+.search input[type="text"] {
+    width: 100%;
+    padding: 10px;
     border: none;
+    border-radius: 20px;
+    background-color: #f8f8f8;
+    font-size: 18px;
+    color: #303030;
     outline: none;
+}
+
+.search i {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: #3088e0;
+}
+
+.btn {
+    width: 100px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #3088e0;
     cursor: pointer;
-    width: 20vw;
-    height: 5vh;
-    border-radius: 5vw 0 0 5vw;
 }
-.fa-search{
-    width: 3vw;
-    height: 5vh;
-    background-color: white;
-    padding: 6px;
-    font-size: 20px;
-    font-weight: 700;
-    border-radius: 0 5vw 5vw 0;
+
+.btn:not(:last-child) {
+    margin-right: 10px;
 }
-.search{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid black;
-    border-radius: 5vw;
+
+.btn.focus {
+    background-color: #505050;
 }
-.btn{
-    height: 5vh;
-    width: 7vw;
-    border-radius: 2.5vh;
-    background-color: rgb(121, 121, 204);
-}
-#centersList{
-    width: 48vw;
-    /* background-color: darkgreen; */
-}
-.wrapper{
+
+.wrapper {
     display: flex;
     justify-content: space-between;
-    background-color: rgb(121, 121, 204);
-    margin-bottom: 10px;
-    border-radius: 20px;
-}
-.container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    width: 48vw;
-    position: relative;
-    left: 1vw;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
 
-}
-.center{
-    width: 22vw;
-    height: 13vh;
-    /* background-color: fuchsia; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.center,
+.city,
+.state {
+    width: 33%;
     text-align: center;
 }
 
-.city{
-    width: 13vw;
-    height: 13vh;
-    /* background-color: brown; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-.state{
-    width: 13vw;
-    height: 13vh;
-    /* background-color: darkslategrey; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-input{
+.center h1,
+.city h1,
+.state h1 {
     font-size: 20px;
+    color: #303030;
 }
-input::placeholder{
-    position: relative;
-    left: 50px;
-    opacity: 0.6;
+
+.cent,
+.cit,
+.st {
+    font-size: 18px;
+    color: #505050;
 }
-.focus{
-    background-color: white;
-}
-@media (max-width: 450px){
-    .searchWrapper{
-        display: flex;
+
+@media screen and (max-width: 767px) {
+    .container {
+        padding: 0;
+    }
+
+    .searchWrapper {
         flex-direction: column;
+        align-items: stretch;
     }
-    .wrapper{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        margin-top: 50px;
+
+    #searchBar {
+        margin: 10px 0;
+        width: 100%;
     }
-    .btn{
-        width: 200px;
-        height: 200px;
-        margin-top: 10px;
-        margin-bottom: 10px;
+
+    .btn {
+        font-size: 14px;
+        padding: 10px;
+        margin-right: 5px;
+        margin-bottom: 5px;
     }
-    .main-heading{
-        margin-top: 30px;
-        margin-bottom: 80px;
-        width: 250px;
-        height: 170px;
-    }
-    .search{
-        width: 200px;
-    }
-    #searchBar{
-        width: 150px;
-    }
-    .fa-search{
-        width: 50px;
-        padding: 20px;
-    }
-    input{
-        font-size: 15px;
-    }
-    input::placeholder{
-        position: relative;
-        left: 0;
+
+    #centersList {
+        margin-top: 20px;
     }
 }
 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        padding: 0 20px;
+    }
+
+    .searchWrapper {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #searchBar {
+        margin: 0;
+        width: 300px;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 10px 15px;
+        margin-right: 10px;
+        margin-bottom: 0;
+    }
+
+    #centersList {
+        margin-top: 40px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 50px;
+    }
+
+    .searchWrapper {
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    #searchBar {
+        margin: 0 20px 0 0;
+        width: 300px;
+    }
+
+    .btn {
+        font-size: 16px;
+        padding: 10px 20px;
+        margin-right: 20px;
+        margin-bottom: 0;
+    }
+
+    #centersList {
+        margin-top: 60px;
+    }
+}
