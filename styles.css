@@ -9,13 +9,6 @@ body {
     background-color: #f8f8f8;
 }
 
-.main-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
 .body {
     background-color: #fff;
     width: 800px;
@@ -87,8 +80,6 @@ body {
     display: flex;
     position: relative;
     margin: 0 auto;
-    /* justify-content: center;
-    align-items: center; */
     margin-top: 20px;
 }
 
