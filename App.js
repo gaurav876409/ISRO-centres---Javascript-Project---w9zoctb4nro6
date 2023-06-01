@@ -1,7 +1,6 @@
 
 const centersList = document.getElementById('centersList');
-const searchBar = document.getElementById('searchBar')
-
+const searchBar = document.getElementById('searchBar');
 
 document.getElementById("city").addEventListener("click", () => {
     removeFocus();
@@ -44,15 +43,17 @@ searchBar.addEventListener('keyup', (e) => {
     }
 });
 
-
-
-
 const loadcenters = async () => {
     try {
         const res = await fetch("https://isro.vercel.app/api/centres");
         isroCenter = await res.json();
-        console.log(isroCenter);
         displaycenters(isroCenter["centres"]);
+        const favoriteButtons = document.querySelectorAll('.favorite-btn');
+        favoriteButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                addToFavorites(index);
+            });
+        });
     } catch (err) {
         console.error(err);
     }
@@ -63,6 +64,7 @@ const displaycenters = (centers) => {
         .map((center) => {
             return `
             <div class="wrapper">
+            <button class="favorite-btn">fav</button>
             <div class="center">
             <h1>CENTER</h1>
             <p class="cent">${center.name}</p>
@@ -89,4 +91,36 @@ function removeFocus() {
         element.classList.remove('focus');
     });
 }
+
+const addToFavorites = (index) => {
+    const selectedCenter = isroCenter["centres"][index];
+    const favoriteItem = document.createElement('div');
+    favoriteItem.classList.add('favorite-item');
+
+    const centerInfo = document.createElement('p');
+    centerInfo.textContent = `Center: ${selectedCenter.name}`;
+
+    const cityInfo = document.createElement('p');
+    cityInfo.textContent = `City: ${selectedCenter.Place}`;
+
+    const stateInfo = document.createElement('p');
+    stateInfo.textContent = `State: ${selectedCenter.State}`;
+
+    const removeButton = document.createElement('button');
+    removeButton.textContent = 'Remove';
+    removeButton.addEventListener('click', () => {
+        favoriteItem.remove();
+    });
+    favoriteItem.appendChild(centerInfo);
+    favoriteItem.appendChild(cityInfo);
+    favoriteItem.appendChild(stateInfo);
+    favoriteItem.appendChild(removeButton);
+
+    const favoriteItemsContainer = document.getElementById('favoriteItems');
+    favoriteItemsContainer.appendChild(favoriteItem);
+};
+
+
+
+
 

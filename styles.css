@@ -7,11 +7,13 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f8f8f8;
+    width: 100%;
 }
 
 .body {
     background-color: #fff;
-    width: 800px;
+    /* width: 800px; */
+    width: 80%;
     height: auto;
     border-radius: 5px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
@@ -161,6 +163,10 @@ body {
         padding: 0;
     }
 
+    .body {
+        width: 100%;
+    }
+
     .searchWrapper {
         flex-direction: column;
         align-items: stretch;
@@ -172,14 +178,39 @@ body {
     }
 
     .btn {
+        width: 80px;
         font-size: 14px;
         padding: 10px;
         margin-right: 5px;
         margin-bottom: 5px;
     }
 
+    .cent,
+    .cit,
+    .st {
+        font-size: 10px;
+        color: #505050;
+    }
+
     #centersList {
         margin-top: 20px;
+        width: auto;
+    }
+
+    .wrapper {
+        display: flex;
+        /* flex-direction: column; */
+    }
+
+    .search {
+        width: auto;
+    }
+
+    .center,
+    .city,
+    .state {
+        width: 20%;
+        text-align: center;
     }
 }
 
@@ -189,7 +220,8 @@ body {
     }
 
     .searchWrapper {
-        flex-direction: row;
+        display: flex;
+        flex-direction: column;
         justify-content: space-between;
         align-items: center;
     }
