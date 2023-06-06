@@ -22,24 +22,26 @@ document.getElementById("state").addEventListener("click", () => {
 let isroCenter = [];
 searchBar.addEventListener('keyup', (e) => {
     const searchString = e.target.value.toLowerCase();
-    if (document.getElementById("name").classList.contains("focus")) {
+    if (searchString.length > 2) {
+        if (document.getElementById("name").classList.contains("focus")) {
 
-        const filtercenters = isroCenter["centres"].filter(center => {
-            return (center["name"].toLowerCase().includes(searchString));
-        });
+            const filtercenters = isroCenter["centres"].filter(center => {
+                return (center["name"].toLowerCase().includes(searchString));
+            });
 
-        displaycenters(filtercenters);
+            displaycenters(filtercenters);
 
-    } else if (document.getElementById("city").classList.contains("focus")) {
-        const filtercenters = isroCenter["centres"].filter(center => {
-            return (center["Place"].toLowerCase().includes(searchString));
-        });
-        displaycenters(filtercenters);
-    } else if (document.getElementById("state").classList.contains("focus")) {
-        const filtercenters = isroCenter["centres"].filter(center => {
-            return (center["State"].toLowerCase().includes(searchString));
-        });
-        displaycenters(filtercenters);
+        } else if (document.getElementById("city").classList.contains("focus")) {
+            const filtercenters = isroCenter["centres"].filter(center => {
+                return (center["Place"].toLowerCase().includes(searchString));
+            });
+            displaycenters(filtercenters);
+        } else if (document.getElementById("state").classList.contains("focus")) {
+            const filtercenters = isroCenter["centres"].filter(center => {
+                return (center["State"].toLowerCase().includes(searchString));
+            });
+            displaycenters(filtercenters);
+        }
     }
 });
 
@@ -48,12 +50,12 @@ const loadcenters = async () => {
         const res = await fetch("https://isro.vercel.app/api/centres");
         isroCenter = await res.json();
         displaycenters(isroCenter["centres"]);
-        const favoriteButtons = document.querySelectorAll('.favorite-btn');
-        favoriteButtons.forEach((button, index) => {
+        const favoritebutton = document.querySelectorAll('.favorite-btn');
+        favoritebutton.forEach((button, index) => {
             button.addEventListener('click', () => {
-                addToFavorites(index);
-            });
-        });
+                addtofav(index);
+            })
+        })
     } catch (err) {
         console.error(err);
     }
@@ -92,34 +94,32 @@ function removeFocus() {
     });
 }
 
-const addToFavorites = (index) => {
-    const selectedCenter = isroCenter["centres"][index];
-    const favoriteItem = document.createElement('div');
-    favoriteItem.classList.add('favorite-item');
+const addtofav = (index) => {
+    const selectedcen = isroCenter["centres"][index];
+    const favoriteitem = document.createElement('div');
+    favoriteitem.classList.add("favt");
 
-    const centerInfo = document.createElement('p');
-    centerInfo.textContent = `Center: ${selectedCenter.name}`;
+    const ci = document.createElement('p');
+    ci.textContent = `city: ${selectedcen.name}`;
+    const si = document.createElement('p');
+    si.textContent = `city: ${selectedcen.State}`;
+    const ni = document.createElement('p');
+    ni.textContent = `city: ${selectedcen.Place}`;
 
-    const cityInfo = document.createElement('p');
-    cityInfo.textContent = `City: ${selectedCenter.Place}`;
-
-    const stateInfo = document.createElement('p');
-    stateInfo.textContent = `State: ${selectedCenter.State}`;
-
-    const removeButton = document.createElement('button');
-    removeButton.textContent = 'Remove';
-    removeButton.addEventListener('click', () => {
-        favoriteItem.remove();
+    const removebtn = document.createElement('button');
+    removebtn.textContent = 'Remove';
+    removebtn.addEventListener('click', () => {
+        favoriteitem.remove();
     });
-    favoriteItem.appendChild(centerInfo);
-    favoriteItem.appendChild(cityInfo);
-    favoriteItem.appendChild(stateInfo);
-    favoriteItem.appendChild(removeButton);
 
-    const favoriteItemsContainer = document.getElementById('favoriteItems');
-    favoriteItemsContainer.appendChild(favoriteItem);
-};
+    favoriteitem.appendChild(ci);
+    favoriteitem.appendChild(si);
+    favoriteitem.appendChild(ni);
+    favoriteitem.appendChild(removebtn);
 
+    const favcontainer = document.getElementById('favcen');
+    favcontainer.appendChild(favoriteitem);
+}
 
 
 
